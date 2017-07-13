@@ -16,4 +16,32 @@
 
 gcc -o kk kk.c -lpthread
 ```
+## 基于内存映射的设备驱动程序
+
+通过添加内核模块实现一个基于内存映射的杂项设备驱动程序。
+
+
+```
+
+拓展：
+
+该模块只实现了显示内存映射区域信息的功能，而且该信息是固定；
+
+拓展部分实现了将当前进程在内存映射后的vma区域的信息显示出来。
+
+编译时：
+
+
+$make
+
+$sudo insmod miscdev_map.ko
+
+$sudo chmod a+rw /dev/mymap
+
+$gcc -o miscdev_maptest miscdev_maptest.c
+
+$./miscdev_maptest
+
+```
+
 
